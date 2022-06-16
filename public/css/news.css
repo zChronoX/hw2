@@ -1,0 +1,257 @@
+body {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
+    background: pink;
+    top: 0;
+}
+
+header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 986px;
+}
+
+
+nav .l_nav {
+    padding-right: 20px;
+    text-align: right;
+    padding: 10px 0;
+}
+
+nav .r_nav {
+    text-align: right;
+    padding: 10px 0;
+    padding-right: 20px;
+}
+
+nav .r_nav a {
+    background: white;
+    font-weight: 700;
+    color: pink;
+    border-radius: 7px;
+    line-height: 50px;
+    padding: 9px 15px;
+}
+
+nav .l_nav a {
+    background: white;
+    font-weight: 700;
+    color: pink;
+    border-radius: 7px;
+    line-height: 50px;
+    padding: 9px 15px;
+
+}
+
+nav .r_nav a:hover,
+nav .l_nav a:hover {
+    background-color: lightcoral;
+    transform: scale(1.01);
+    transition: 150ms ease-in-out;
+}
+
+nav h1 {
+    padding: 0 20px;
+    line-height: 70px;
+    margin: 0;
+    display: inline-block;
+    font-size: 23px;
+    font-weight: 900;
+}
+
+
+nav a {
+    text-decoration: none;
+    cursor: pointer;
+    transform: scale(1.01);
+    transition: 150ms ease-in-out;
+}
+
+.middle_logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1000px;
+    padding-right: 32px;
+
+}
+
+.middle_logo img {
+    width: 70px;
+}
+
+
+#profile {
+    box-sizing: border-box;
+    background: rgb(250, 205, 212);
+    border-radius: 5px;
+    text-align: center;
+    padding: 15px;
+    color: black;
+    border: 2px solid salmon;
+
+}
+
+#profile .name,
+#profile .welcome {
+    font-size: 18px;
+    font-weight: 900;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1000px;
+    padding-top: 10px;
+    width: 100%;
+}
+
+
+
+.hidden {
+    display: none;
+}
+
+#infoView {
+    position: absolute;
+    top: auto;
+    height: 100vh;
+    z-index: 2;
+    color: white;
+    font-size: 1.4em;
+}
+
+#infoView div {
+    border-radius: 15px;
+    padding: 30px;
+    background-color: lightcoral;
+    padding-top: 0px;
+}
+
+#infoTitle {
+    margin-top: 0;
+    margin-bottom: 55px;
+    text-align: center;
+    font-size: 1.7em;
+}
+
+#infoView strong {
+    text-decoration: underline;
+}
+
+#closeInfo {
+    margin-top: 75px;
+    text-align: right;
+}
+
+#closeInfo:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+    transition: 150ms ease-in-out;
+}
+
+
+#userinfo {
+    background: pink;
+    font-weight: bold;
+    padding: 10px 15px;
+    color: black;
+    border-radius: 20px;
+    line-height: 50px;
+    margin-top: 20px;
+    border: 2px solid salmon;
+}
+
+#userinfo:hover {
+    transform: scale(1.01);
+    transition: 150ms ease-in-out;
+}
+
+.overflow {
+    overflow: hidden;
+}
+
+#news{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+}
+
+#news div{
+    border-radius: 30px;
+    margin: 30px;
+    border: 3px solid whitesmoke;
+    border-radius: 30px;
+    width: 50%;
+
+}
+
+.titolo{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.testo{
+    font-family: 'Roboto', sans-serif;
+    margin: 20px 20px;
+    font-weight: 700;
+}
+
+.img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.data{
+    text-align: end;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+#posts_title{
+    font-size: 30px;
+    font-weight: bolder;
+    margin-top: 50px;
+    margin-bottom: -30px;
+}
+
+@media(max-width: 500px){
+    nav{
+        width: 90% !important;
+        margin: 10px;
+        flex-wrap: wrap;
+    }
+    header{
+        height: auto;
+    }
+}
+

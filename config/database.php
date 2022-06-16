@@ -77,6 +77,12 @@ return [
             'search_path' => 'public',
             'sslmode' => 'prefer',
         ],
+        
+        'mongodb' => [
+                'driver' => 'mongodb',
+                'dsn' => env('MONGODB_HOST'),
+                'database' => env('MONGODB_DATABASE'),
+          ],
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',

@@ -26,6 +26,7 @@
                 <img src="images/logo.png">
             </div>
             <div class="r_nav">
+                <a href="{{url('news')}}">News</a>
                 <a id="infoButton">About</a>
                 <a href="{{url('logout')}}">Logout</a>
             </div>

@@ -25,6 +25,7 @@
                 <img src="images/logo.png">
             </div>
             <div class="r_nav">
+                <a href="{{url('news')}}">News</a>
                 <a id="infoButton">About</a>
                 <a href="{{url('logout')}}">Logout</a>
             </div>
@@ -61,7 +62,7 @@
 
     <section id="posts">
         <p id="posts_title"> Benvenuto su GTech Tips! 🖥️
-            <br> Il blog che riguarda Hardware, Software e molto altro!
+            <br> Il forum che riguarda Hardware, Software e molto altro!
             <br>Scrivi un post cliccando in alto e leggi gli ultimi qui di seguito!
         </p>
     </section>

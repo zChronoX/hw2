@@ -48,3 +48,9 @@ Route::get('/likes/{id_post}', 'App\Http\Controllers\LikeController@likes');
 
 Route::get('create', 'App\Http\Controllers\CreateController@index');
 Route::post('create', 'App\Http\Controllers\CreateController@do_create');
+
+/*Route news con MongoDB */
+
+
+Route::get('news','App\Http\Controllers\NewsController@news');
+Route::get('/news/getnews','App\Http\Controllers\NewsController@getnews');
