@@ -75,6 +75,7 @@ input[type="submit"]:active {
 
 ::placeholder {
     color: white;
+    text-align: center;
 }
 
 .textBox {
@@ -112,6 +113,12 @@ input[type="submit"]:active {
 
 .overflow {
     overflow: hidden;
+}
+.success{
+    margin-top:30px;
+    font-weight: bold;
+    font-size: 20px;
+    color:lightgreen;
 }
 
 @media(max-width: 500px) {

@@ -31,6 +31,7 @@
             <a href="{{url('news')}}">News</a>
             <a id="infoButton">About</a>
             <a href="{{url('logout')}}">Logout</a>
+            <a href="{{url('feedback')}}">Feedback</a>
         </div>
     </nav>
     <section id="infoView" class="hidden">
