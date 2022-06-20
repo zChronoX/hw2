@@ -10,7 +10,7 @@ function showPassword(event) {
   else {
     let typeP = document.getElementById('Password');
     typeP.setAttribute("type", "text");
-    document.getElementById('eyeP').style.color = '#000000';
+    document.getElementById('eyeP').style.color = '#fcfcfc';
 
     stateP = true;
   }

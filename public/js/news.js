@@ -1,23 +1,3 @@
-const showInfoWindow = document.querySelector('#infoView');
-const infoButton = document.querySelector('#infoButton');
-infoButton.addEventListener('click', showInfo);
-const closeInfo = document.querySelector('#closeInfo');
-closeInfo.addEventListener('click', closeInfoPage);
-
-function showInfo() {
-    if (showInfoWindow.classList.contains('hidden')) {
-        showInfoWindow.classList.remove('hidden');
-        document.body.classList.add('overflow');
-    }
-}
-
-function closeInfoPage() {
-    if (!showInfoWindow.classList.contains('hidden')) {
-        showInfoWindow.classList.add('hidden');
-        document.body.classList.remove('overflow');
-    }
-}
-
 function GetNews(){
     fetch(BASE_URL+'news/getnews').then(fetchResponse, onError).then(fetchPostsJson);
 }

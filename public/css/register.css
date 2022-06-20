@@ -61,7 +61,7 @@ input {
     background: pink;
     border: 3px solid lightpink;
     border-radius: 10px;
-    width: 50%;
+    width: 40vh;
 }
 
 .register_title {
@@ -78,7 +78,7 @@ input {
 .register_logo img {
     margin: 10px;
     object-fit: cover;
-    width: 40%;
+    width: 20%;
 
 }
 
@@ -148,13 +148,7 @@ input {
     color: #7a7a7a;
     font-weight: normal;
     position: absolute;
-    left: 60px;
-}
-
-.fa-eye:before {
-    position: absolute;
-    left: 55px;
-
+    left: 90px;
 }
 
 
@@ -336,4 +330,18 @@ input[type="submit"]:active {
 .valid,
 .invalid {
     margin-bottom: 10px;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@media(max-width: 500px){
+    .fa{
+        left: 30px;
+    }
 }

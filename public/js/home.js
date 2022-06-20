@@ -1,8 +1,3 @@
-const showInfoWindow = document.querySelector('#infoView');
-const infoButton = document.querySelector('#infoButton');
-infoButton.addEventListener('click', showInfo);
-const closeInfo = document.querySelector('#closeInfo');
-closeInfo.addEventListener('click', closeInfoPage);
 
 const userinfo = document.querySelector('#userinfo');
 userinfo.addEventListener('click', info);
@@ -14,20 +9,6 @@ function info() {
     }
     else
         profile.classList.add('hidden');
-}
-
-function showInfo() {
-    if (showInfoWindow.classList.contains('hidden')) {
-        showInfoWindow.classList.remove('hidden');
-        document.body.classList.add('overflow');
-    }
-}
-
-function closeInfoPage() {
-    if (!showInfoWindow.classList.contains('hidden')) {
-        showInfoWindow.classList.add('hidden');
-        document.body.classList.remove('overflow');
-    }
 }
 
 function SpotifySearch(event) {
@@ -53,6 +34,12 @@ function onError(error) {
 function fetchPostsJson(json) {
     console.log(json);
     const posts = document.querySelector("#posts");
+    if (json.length == 0){
+        const text1 = document.createElement("p");
+        text1.textContent = "Non ci sono post per ora!";
+        text1.classList.add("notfound");
+        posts.appendChild(text1);
+    }
     const results = json;
     let num_results = results.length;
     if (num_results > 10)
@@ -157,6 +144,23 @@ function onJSONSpotify(json) {
     console.log(json);
     const library = document.querySelector('#a1');
     library.innerHTML = '';
+    if (json.error){
+        const not_found = document.createElement("div");
+        const text1 = document.createElement("p");
+        text1.textContent = "Non hai inserito un testo";
+        text1.classList.add("notfound");
+        not_found.appendChild(text1);
+        library.appendChild(not_found);
+        return null;
+    }
+    else if (json.tracks.items.length == 0){
+        const not_found = document.createElement("div");
+        const text1 = document.createElement("p");
+        text1.textContent = "Nessun brano trovato!";
+        text1.classList.add("notfound");
+        not_found.appendChild(text1);
+        library.appendChild(not_found);
+    }
     const results = json.tracks.items;
     let num_results = results.length;
     if (num_results > 3)
@@ -193,9 +197,13 @@ f1.addEventListener('submit', RicercaSpotify);
 
 function eliminaPost(event) {
     const id_post = event.currentTarget.dataset.postsidbin;
+    //Itero tutti i div e li rimuovo dal DOM
+    const posts_div = document.querySelectorAll('#posts div').forEach(function(element){
+        element.remove();
+    });
+    // posts_div.innerHTML = ''; Non funzionante in quanto rimangono i div vuoti 
     fetch("/delete_post/" + id_post).then(onResponse, onError).then(fetchPostsJson);
-    location.reload();
-    return false;
+    fetchPosts();
 
 
 }
@@ -207,8 +215,14 @@ f2.addEventListener('submit', SearchPosts);
 function onJSONSearch(json) {
     console.log(json);
     const posts = document.querySelector("#a2");
-    const results = json;
     posts.innerHTML = '';
+    if (json.length == 0){
+        const text1 = document.createElement("p");
+        text1.textContent = "Nessun post trovato!";
+        text1.classList.add("notfound");
+        posts.appendChild(text1);
+    }
+    const results = json;
     posts.classList.remove("hidden");
     let num_results = results.length;
     if (num_results > 10)
@@ -269,9 +283,15 @@ function SearchPosts(event) {
     event.preventDefault();
     const input = document.querySelector('#search_ps');
     const input_value = encodeURIComponent(input.value);
+    const empty = document.querySelector('#a2');
+    empty.innerHTML = "";
     if (input_value == 0) {
         console.log('Non hai inserito niente');
-        document.querySelector('#a2').innerHTML = '';
+        empty.classList.remove("hidden");
+        const text = document.createElement("p");
+        text.textContent = "Inserisci qualcosa da cercare!";
+        text.classList.add("notfound");
+        empty.appendChild(text);
     }
     else {
         console.log('Eseguo la ricerca del post contente:' + input_value);

@@ -1,23 +1,3 @@
-const showInfoWindow = document.querySelector('#infoView');
-const infoButton = document.querySelector('#infoButton');
-infoButton.addEventListener('click', showInfo);
-const closeInfo = document.querySelector('#closeInfo');
-closeInfo.addEventListener('click', closeInfoPage);
-
-function showInfo() {
-    if (showInfoWindow.classList.contains('hidden')) {
-        showInfoWindow.classList.remove('hidden');
-        document.body.classList.add('overflow');
-    }
-}
-
-function closeInfoPage() {
-    if (!showInfoWindow.classList.contains('hidden')) {
-        showInfoWindow.classList.add('hidden');
-        document.body.classList.remove('overflow');
-    }
-}
-
 function fetchPosts() {
     fetch('post_liked').then(fetchResponse, onError).then(fetchPostsJson);
 }
@@ -35,6 +15,14 @@ function onError(error) {
 function fetchPostsJson(json) {
     console.log(json);
     const posts = document.querySelector("#posts");
+    if (json.length == 0){
+        const not_found = document.createElement("div");
+        const text1 = document.createElement("p");
+        text1.textContent = "Non hai messo like a nessun post!";
+        text1.classList.add("notfound");
+        not_found.appendChild(text1);
+        posts.appendChild(not_found);
+    }
     const results = json;
     let num_results = results.length;
     if (num_results > 10)
@@ -127,9 +115,13 @@ function onJSONResponseLike(json) {
 
 function eliminaPost(event) {
     const id_post = event.currentTarget.dataset.postsidbin;
+    //Itero tutti i div e li rimuovo dal DOM
+    const posts_div = document.querySelectorAll('#posts div').forEach(function(element){
+        element.remove();
+    });
+    // posts_div.innerHTML = ''; Non funzionante in quanto rimangono i div vuoti 
     fetch("/delete_post/" + id_post).then(onResponse, onError).then(fetchPostsJson);
-    location.reload();
-    return false;
+    fetchPosts();
 
 
 }
