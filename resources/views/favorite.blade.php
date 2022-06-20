@@ -6,8 +6,8 @@
 
 
 <head>
-    <link rel="stylesheet" href='{{ url('css/favorite.css') }}'>
-    <script src='{{ url('js/favorite.js') }}' defer="true"></script>
+    <link rel="stylesheet" href="{{ url('css/favorite.css') }}">
+    <script src="{{ url('js/favorite.js') }}" defer="true"></script>
 </head>
 
 

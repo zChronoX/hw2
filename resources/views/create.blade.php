@@ -4,11 +4,11 @@
 
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="stylesheet" href='{{ url('css/create_post.css') }}'>
+    <link rel="stylesheet" href="{{ url('css/create_post.css') }}">
     <script>
         const BASE_URL = "{{ url('/') }}/";
     </script>
-    <script src='{{ url('js/create_post.js') }}' defer="true"></script>
+    <script src="{{ url('js/create_post.js') }}" defer="true"></script>
 </head>
 
 

@@ -4,12 +4,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Laravel | Registrazione - GTech Tips - </title>
-    <link rel="shortcut icon" type="image/x-icon" href='{{ url('images/logo.png') }}' />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url('images/logo.png') }}" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <link rel="stylesheet" href='{{ url('css/register.css') }}'>
-    <script src='{{ url('js/register.js') }}' defer></script>
+    <link rel="stylesheet" href="{{ url('css/register.css') }}">
+    <script src="{{ url('js/register.js') }}" defer></script>
     <script type="text/javascript">
         const REGISTER_ROUTE = "{{url('register')}}";
     </script>
@@ -36,6 +36,10 @@
             <span class='errore'>Username in uso!</span>
             @elseif($error == 'existing_email')
             <span class='errore'>Email in uso!</span>
+            @elseif($error == 'short_password')
+            <span class='errore'>Password troppo breve!</span>
+            @elseif($error == 'wrong_email_pattern')
+            <span class='errore'>Email inserita non valida!</span>
             @endif
             <form action="{{ url('register') }}" id='form' class='type_zero' name='form_dati' method='post'>
             @csrf

@@ -4,12 +4,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title> Laravel | Login - GTech Tips - </title>
-    <link rel="shortcut icon" type="image/x-icon" href='{{ url('images/logo.png') }}' />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url('images/logo.png') }}" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <link rel="stylesheet" href='{{ url('css/login.css') }}'>
-    <script src='{{ url('js/login.js') }}' defer></script>
+    <link rel="stylesheet" href="{{ url('css/login.css') }}">
+    <script src="{{ url('js/login.js') }}" defer></script>
 </head>
 
 <body>

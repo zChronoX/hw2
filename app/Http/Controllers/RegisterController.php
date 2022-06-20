@@ -44,6 +44,14 @@ class RegisterController extends BaseController{
             Session::put('error', 'existing_email');
             return redirect('register')->withInput();
         }
+        else if(strlen(request('Passowrd')) < 4){
+            Session::put('error', 'short_password');
+            return redirect('register')->withInput();
+        }
+        else if(!filter_var(request('Email'), FILTER_VALIDATE_EMAIL)){
+            Session::put('error', 'wrong_email_pattern');
+            return redirect('register')->withInput();
+        }
 
             
 
