@@ -12,6 +12,12 @@ body {
     width: 0;
 }
 
+.errore{
+    text-align: center;
+    display: block;
+    color: red;
+    font-size: 18px;
+}
 
 header {
     display: flex;

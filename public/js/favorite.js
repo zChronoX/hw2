@@ -120,8 +120,24 @@ function eliminaPost(event) {
         element.remove();
     });
     // posts_div.innerHTML = ''; Non funzionante in quanto rimangono i div vuoti 
-    fetch("/delete_post/" + id_post).then(onResponse, onError).then(fetchPostsJson);
+    fetch("/delete_post/" + id_post).then(onDeleteResponse).then(onDeleteJson); 
     fetchPosts();
 
 
 }
+
+function onDeleteResponse (response) {
+    return response.json();
+ }
+
+ function onDeleteJson(json) {
+
+    const error= document.querySelector(".errore");
+
+    if(json["notauthorized"]){
+        error.classList.remove("hidden");
+    }
+    else {
+        error.classList.add("hidden");
+    }
+ }

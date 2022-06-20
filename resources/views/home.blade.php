@@ -35,7 +35,9 @@
             <br> Il forum che riguarda Hardware, Software e molto altro!
             <br>Scrivi un post cliccando in alto e leggi gli ultimi qui di seguito!
         </p>
+        <span class="errore hidden"> Non puoi cancellare un post non tuo!</span>
     </section>
+    
     <section id="s_posts">
         <form id="search_posts" name="posts_form" method="GET">
             @csrf

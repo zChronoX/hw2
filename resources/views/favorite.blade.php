@@ -15,5 +15,6 @@
     <section id="posts">
         <p id="posts_title"> Qui puoi trovare tutti i post a cui ai messo il Like!
         </p>
+        <span class="errore hidden"> Non puoi cancellare un post non tuo!</span>
     </section>
 @endsection

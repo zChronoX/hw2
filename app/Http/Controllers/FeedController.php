@@ -126,8 +126,13 @@ class FeedController extends BaseController{
     }
 
     public function delete_post($id){
-        $deletedPost = Post::where('id',$id)->delete();
+        if (Post::find($id)->userid != Session::get('user_id'))
+        {
+            return array("notauthorized" =>true);
+        }
         
+        $deletedPost = Post::where('id',$id)->delete();
+        return array("notauthorized" => false);
     }
 
 
