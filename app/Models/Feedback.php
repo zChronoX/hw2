@@ -12,8 +12,6 @@ class Feedback extends Model{
 
     protected $collection = 'Feedbacks';
 
-    protected $fillable = [
-        'userID', 'Nome' , 'Cognome', 'Testo'
-    ];
+    
 
 }

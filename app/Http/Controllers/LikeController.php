@@ -34,7 +34,6 @@ class LikeController extends BaseController{
                 }
             }
         }
-        #altrimenti se non è presente il drink
         #gli metto il like
         $newLike = Likes::create([
             'userid' => Session::get('user_id'),

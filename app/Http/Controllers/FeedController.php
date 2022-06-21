@@ -13,7 +13,7 @@ class FeedController extends BaseController{
     public function post(){
         //Controllo del login
         if(!Session::get('user_id')){
-            return [];
+            return redirect('login');
         }
         //Funzione di visualizzazione di tutti i post nella home
         $userid = User::find(Session::get('user_id'));
@@ -41,7 +41,7 @@ class FeedController extends BaseController{
     public function search_post($q){
         //Controllo del login
         if(!Session::get('user_id')){
-            return [];
+            return redirect('login');
         }
         //Funzione di ricerca dei post dato un carattere nel testo
         $userid = User::find(Session::get('user_id'));
