@@ -20,12 +20,12 @@
             @csrf
 
             <h1>Scrivi qui il tuo feedback!</h1>
-            <label><input type='text' name='Nome' class="TitleBox" placeholder="Nome" id="titolo" value='{{ old("nome") }}'></label>
+            <label><input type='text' name='Nome' class="TitleBox" placeholder="Nome" id="titolo" value='{{ old("nome") }}' required></label>
             <span id="Title"></span>
-            <label><input type='text' name='Cognome' class="TitleBox" placeholder="Cognome" id="titolo" value='{{ old("cognome") }}'></label>
+            <label><input type='text' name='Cognome' class="TitleBox" placeholder="Cognome" id="titolo" value='{{ old("cognome") }}' required></label>
             <span id="Title"></span>
             <label><textarea name='Testo' class="textBox" placeholder="Inserisci qui il tuo feedback"
-                    id="testo" value='{{ old("testo") }}'></textarea></label>
+                    id="testo" value='{{ old("testo") }}' required></textarea></label>
             <span id="main_text"></span>
             <div id="zero"><input type='submit' value='Invia'></div>
 
